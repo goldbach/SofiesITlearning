@@ -291,7 +291,7 @@ Nu laver du det rigtige workflow på det her repo.
    git push -u origin noter/dag-1    # -u: husk koblingen mellem lokal og remote branch
    ```
 5. Gå ind på GitHub. Der står et banner med **"Compare & pull request"**. Klik på det, skriv en kort beskrivelse, og tilføj din far som **reviewer**.
-6. Vent på review. Hvis du får kommentarer, retter du lokalt, laver commit og push igen. PR'en opdaterer sig selv.
+6. Vent på review. Hvis du får kommentarer, retter du lokalt, laver commit og push igen. PR'en opdaterer sig selv. `main` er beskyttet: PR'en kan først merges, når den er godkendt, og alle kommentartråde er løst. Sådan er det også på de fleste rigtige projekter.
 7. Når PR'en er godkendt og merget, rydder du op. Branchen på GitHub bliver slettet automatisk ved merge:
    ```bash
    git switch main
