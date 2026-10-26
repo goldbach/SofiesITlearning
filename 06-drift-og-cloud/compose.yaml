@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8000"
+    environment:
+      MILJOE: compose
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: lab
+      POSTGRES_PASSWORD: kun-til-lokal-test
+      POSTGRES_DB: lab
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

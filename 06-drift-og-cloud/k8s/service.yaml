@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: maalinger-api
+spec:
+  type: LoadBalancer
+  selector:
+    app: maalinger-api
+  ports:
+    - port: 8080
+      targetPort: 8000

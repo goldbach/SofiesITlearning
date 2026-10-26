@@ -29,3 +29,7 @@ Se [ordlisten i tutorial 04](04-kode-java-csharp/README.md#ordliste).
 ## Dag 5: Fra behov til løsning
 
 Se [ordlisten i tutorial 05](05-fra-behov-til-loesning/README.md#ordliste).
+
+## Dag 6: Drift og cloud
+
+Se [ordlisten i tutorial 06](06-drift-og-cloud/README.md#ordliste).
