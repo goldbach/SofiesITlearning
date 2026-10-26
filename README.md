@@ -33,4 +33,4 @@ Forløbet er på dansk, men fagudtrykkene står på engelsk, fordi det er dem, d
 
 Start med [dag 0](00-opsaetning/README.md). Den gør din Mac klar med Claude-konto, Ghostty, VS Code, Git og Python. Derudover skal du have:
 
-- En gratis konto på [github.com](https://github.com).
+- En gratis konto på [github.com](https://github.com). Send dit brugernavn til din far, så han kan give dig skriveadgang til repoet.

@@ -7,7 +7,8 @@ Håndværkere starter med at have styr på deres værktøj, og det gør vi også
 1. En **Claude-konto**, så du kan bruge Claude som tutor fra dag 1b.
 2. En god **terminal**: Ghostty.
 3. En opdateret **VS Code**, sat op til det her forløb.
-4. Tjekket **Git** og **Python**.
+4. **Homebrew** og **GitHub CLI** (`gh`).
+5. Tjekket **Git** og **Python**.
 
 ---
 
@@ -131,7 +132,26 @@ Markdown bliver brugt overalt: README-filer, pull requests, Jira, Confluence og 
 
 ---
 
-## 4. Tjek Git og Python
+## 4. Homebrew og GitHub CLI
+
+**Homebrew** er en *package manager* til macOS: en app-butik til terminalen, hvor du installerer udviklerværktøjer med én kommando. Installér den med kommandoen fra [brew.sh](https://brew.sh):
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Følg instruktionerne til sidst. Du skal muligvis køre et par linjer, så `brew` kommer på din PATH. Luk og genåbn derefter Ghostty, og installér **GitHub CLI** (`gh`):
+
+```bash
+brew install gh
+gh --version
+```
+
+Med `gh` logger du ind på GitHub fra terminalen, så du kan pushe på dag 1.
+
+---
+
+## 5. Tjek Git og Python
 
 I Ghostty:
 
@@ -154,6 +174,7 @@ python3 -m venv --help | head -1
 - [ ] VS Code er opdateret, og `code --version` virker i terminalen.
 - [ ] Extensions og indstillinger er på plads.
 - [ ] Jeg kan åbne en `.md`-fil i preview.
+- [ ] `brew` og `gh` er installeret.
 - [ ] `git`, `python3`, `pip` og `venv` svarer alle sammen.
 
 ## Ordliste
@@ -164,6 +185,8 @@ python3 -m venv --help | head -1
 | **IDE / editor** | Programmet, man skriver kode i. VS Code er en editor, der med extensions kan næsten det samme som en IDE (*integrated development environment*) |
 | **extension / plugin** | En udvidelse til et program |
 | **Command Palette** | `Cmd-Shift-P` i VS Code: søg efter enhver kommando |
+| **package manager** | Et værktøj, der installerer og opdaterer software, f.eks. Homebrew på macOS og `pip` til Python |
+| **CLI** | *Command-line interface*: et program, man bruger fra terminalen, f.eks. `gh` |
 | **PATH** | Listen over mapper, shellen leder i, når du skriver en kommando |
 | **Markdown** | Et simpelt tekstformat til dokumentation (`.md`-filer) |
 | **dotfile / config-fil** | En opsætningsfil, ofte med et navn, der starter med `.` |

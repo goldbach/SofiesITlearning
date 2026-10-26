@@ -262,10 +262,15 @@ Et password, der er committet, ligger i historikken for altid, også selvom det 
 
 Nu laver du det rigtige workflow på det her repo.
 
+0. **Log ind på GitHub fra terminalen** (kun første gang). Git skal vide, at det er dig, før du må pushe. Kommandoen `gh` installerede du på dag 0:
+   ```bash
+   gh auth login
+   ```
+   Vælg **GitHub.com**, **HTTPS**, svar **Yes** til at bruge dine GitHub-oplysninger til Git, og log ind via browseren.
 1. **Clone** forløbet:
    ```bash
    cd ~/kursus
-   git clone <url-du-får-af-far>
+   git clone https://github.com/goldbach/SofiesITlearning.git
    cd SofiesITlearning
    ```
 2. **Lav en branch** til dine noter. Navngiv den efter konventionen `<type>/<beskrivelse>`:
