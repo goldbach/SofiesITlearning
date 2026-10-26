@@ -1,6 +1,6 @@
 # Dag 5: Fra behov til løsning
 
-*Ca. 4 timer. I dag er der mindre kode og mere af det, du kommer til at lave hver dag.*
+*Ca. 4 timer. Det hele er kerne. Det er det modul, der ligger tættest på dit kommende job. I dag er der mindre kode og mere af det, du kommer til at lave hver dag.*
 
 ## Hvorfor?
 
@@ -290,7 +290,13 @@ Man skelner mellem **severity** (hvor alvorlig er fejlen teknisk?) og **priority
 
 ### Øvelser E
 
-10. Fejlen i eksemplet ovenfor findes faktisk. Genskab den på den oprindelige `server.py` fra dag 2. Du kan se den med `git show main:02-system-og-api/server.py`. Findes fejlen også i din egen version fra øvelse 4?
+10. Fejlen i eksemplet ovenfor findes faktisk. Genskab den på den *oprindelige* `server.py` fra dag 2, ikke din rettede version. Find den i Git-historikken:
+    ```bash
+    git log --oneline -- 02-system-og-api/server.py     # det nederste commit er det første
+    git show <hash>:02-system-og-api/server.py > /tmp/server_original.py
+    python3 /tmp/server_original.py
+    ```
+    Findes fejlen også i din egen version fra dag 2, øvelse 4?
 11. Find selv en anden fejl i `server.py` eller `app.py` fra dag 2, og skriv en fejlrapport som et **GitHub Issue** med labelen `bug`. *Idéer:* Hvad sker der med meget store tal, negative tryk, en tom body eller forkert `Content-Type`?
 12. For kravet *"En ansøgning kan ikke indsendes, hvis ansøgt beløb er 0 eller over 200.000 kr."*: Hvilke testværdier vil du bruge? Begrund hver værdi. *Hint:* grænseværdier, ækvivalensklasser og "mærkelige" input.
 

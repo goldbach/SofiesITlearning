@@ -1,6 +1,6 @@
 # Dag 6b: Kryptografi i praksis
 
-*Ca. 2 timer. Tag den før dag 7, som bygger videre på den.*
+*Ca. 2 timer. Tag den før dag 7, som bygger videre på den. **Kerne:** del A–E og G. **Fordybelse:** del F (SSH-nøgler).*
 
 ## Hvorfor?
 
@@ -250,7 +250,7 @@ Det er de tre byggeklodser i ét. Nu forstår du også fejlene fra dag 2: *"cert
 
 ---
 
-## Del F: SSH-nøgler (ca. 15 min)
+## Del F: SSH-nøgler (ca. 15 min, fordybelse)
 
 **SSH** (dag 2, port 22) bruger nøglepar i stedet for passwords. Det bruges til at logge ind på servere og til Git. Lav dit eget nøglepar:
 

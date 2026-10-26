@@ -1,6 +1,6 @@
 # Dag 7: Sikkerhed og konsulentlivet
 
-*Ca. 4 timer. Del A–D handler om sikkerhed, del E–F om at være konsulent.*
+*Ca. 3½ time. Det hele er kerne. Del A–D handler om sikkerhed, del E–F om at være konsulent.*
 
 ## Hvorfor?
 

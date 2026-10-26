@@ -1,6 +1,6 @@
 # Dag 2: Hvordan et system hænger sammen
 
-*Ca. 4–5 timer. Del F kan tages som en separat blok.*
+*Ca. 3½ time for kernen. **Kerne:** del A–D og F. **Fordybelse:** del E og øvelse 12.*
 
 ## Hvorfor?
 
@@ -287,7 +287,7 @@ En OpenAPI-specifikation er *kontrakten* mellem to systemer. I mange projekter b
 
 ---
 
-## Del E: Kig under motorhjelmen på rigtige hjemmesider (ca. 15 min)
+## Del E: Kig under motorhjelmen på rigtige hjemmesider (ca. 15 min, fordybelse)
 
 1. Åbn en hjemmeside, du bruger, f.eks. en nyhedsside, i Chrome eller Safari. I Safari skal du først slå *Udvikler*-menuen til under *Indstillinger → Avanceret*.
 2. Åbn **Developer Tools** med `Cmd-Option-I`, og vælg fanen **Network**.
@@ -413,7 +413,7 @@ Kundens systemer ligger sjældent åbent på internettet. Du kommer til at høre
 
 10. **Optaget port.** Fremprovokér `Address already in use`, find PID'en med `lsof`, og stop den rigtige proces.
 11. **Refused eller timeout?** Kør `nc -vz 127.0.0.1 8000` med og uden server. Kør også `nc -vz -G 3 api.github.com 8443`. Skriv ned, hvad de tre svar betyder.
-12. **Kald din server fra telefonen.**
+12. **Kald din server fra telefonen** (fordybelse).
     1. Ret `adresse` i `server.py` til `("0.0.0.0", 8000)`, og start serveren.
     2. Hvis macOS spørger, om Python må modtage indgående forbindelser, så tillad det.
     3. Find din private IP med `ipconfig getifaddr en0`.
@@ -431,7 +431,7 @@ Kundens systemer ligger sjældent åbent på internettet. Du kommer til at høre
 Lav en branch `opgaver/dag-2`, og aflevér via PR:
 - dine ændringer i `server.py` (øvelse 3–5) og `app.py` (øvelse 8)
 - `requirements.txt`
-- `noter/dag-2.md` med dine svar på øvelse 1, 2, 6, 9, 11, 12.5 og 13
+- `noter/dag-2.md` med dine svar på øvelse 1, 2, 6, 9, 11 og 13
 
 ## Spørg Claude
 

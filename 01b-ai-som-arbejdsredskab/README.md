@@ -1,6 +1,6 @@
 # Dag 1b: AI som arbejdsredskab
 
-*Ca. 1½–2 timer. Lav det efter dag 1, fordi du skal bruge terminalen og Git.*
+*Ca. 1½ time. Lav det efter dag 1, fordi du skal bruge terminalen og Git. Det hele er kerne. Videoerne til fordybelse er valgfri.*
 
 ## Hvorfor?
 

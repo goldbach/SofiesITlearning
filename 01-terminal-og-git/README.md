@@ -1,5 +1,7 @@
 # Dag 1: Terminal og Git
 
+*Ca. 3 timer. Del A–D er kerne. Videoerne til fordybelse er valgfri.*
+
 ## Hvorfor starter vi her?
 
 I et IT-projekt ligger alt i **Git**: koden, SQL-scripts, testdata, konfiguration og ofte også dokumentation og krav. Hver ændring bliver gennemgået af en kollega, før den kommer ind. Det gælder for udviklere, testere og analytikere.
@@ -262,7 +264,7 @@ Et password, der er committet, ligger i historikken for altid, også selvom det 
 
 Nu laver du det rigtige workflow på det her repo.
 
-0. **Log ind på GitHub fra terminalen** (kun første gang). Git skal vide, at det er dig, før du må pushe. Kommandoen `gh` installerede du på dag 0:
+0. **Log ind på GitHub fra terminalen** (kun første gang). Du skal have accepteret invitationen til repoet på dag 0. Git skal vide, at det er dig, før du må pushe. Kommandoen `gh` installerede du på dag 0:
    ```bash
    gh auth login
    ```

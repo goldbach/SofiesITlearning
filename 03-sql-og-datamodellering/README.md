@@ -1,6 +1,6 @@
 # Dag 3: Data – SQL og datamodellering
 
-*Ca. 4–5 timer. Del A–B og del C–E kan godt tages hver for sig.*
+*Ca. 4 timer for kernen. **Kerne:** del A–F, undtagen øvelse 15. **Fordybelse:** øvelse 15 (gør API'et permanent) og SQL Murder Mystery.*
 
 ## Hvorfor?
 
@@ -375,7 +375,7 @@ Det hedder **SQL injection** og har været en af de mest udnyttede sikkerhedsfej
 
 ### Øvelse E
 
-15. **Gør API'et fra dag 2 permanent.** Kopiér din `server.py` fra dag 2 hertil, og få den til at gemme målinger i en SQLite-database `maalinger.db` i stedet for i et dict. Genstart serveren, og se, at data overlever.
+15. **Gør API'et fra dag 2 permanent** (fordybelse). Kopiér din `server.py` fra dag 2 hertil, og få den til at gemme målinger i en SQLite-database `maalinger.db` i stedet for i et dict. Genstart serveren, og se, at data overlever.
 
     *Hints:*
     - Opret forbindelse og tabel øverst: `conn = sqlite3.connect("maalinger.db")` og `CREATE TABLE IF NOT EXISTS ...`
@@ -410,7 +410,7 @@ Lav en branch `opgaver/dag-3`, og aflevér via PR:
 - `noter/dag-3.sql`: dine forespørgsler fra øvelse 1–7
 - `noter/dag-3.md`: anomalier (8), Mermaid-diagrammer (9 og 10), status-overvejelser (11) og refleksion (14)
 - `noter/tilskud.sql`: tabeller, testdata og forespørgsler (11–13)
-- `server.py` med SQLite (15)
+- hvis du har lavet fordybelsen: `server.py` med SQLite (15)
 
 ## Spørg Claude
 

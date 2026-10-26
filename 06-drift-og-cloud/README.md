@@ -1,6 +1,6 @@
 # Dag 6: Drift og cloud
 
-*Ca. 4–5 timer. Del E (Kubernetes i praksis) er valgfri, men anbefalet.*
+*Ca. 2 timer for kernen. **Kerne:** del A, B, D og F. **Fordybelse:** del C (Docker Compose) og del E (Kubernetes i praksis). I planen tager du A–B på dag 4 og D og F på dag 5.*
 
 ## Hvorfor?
 
@@ -161,7 +161,7 @@ En container skal kunne smides væk og erstattes når som helst. Data, der skal 
 
 ---
 
-## Del C: Flere containere med Docker Compose (ca. 30 min)
+## Del C: Flere containere med Docker Compose (ca. 30 min, fordybelse)
 
 Et rigtigt system består af flere dele (dag 2). Med **Docker Compose** beskriver du dem alle i én fil. Læs [`compose.yaml`](compose.yaml): et `api` og en `db` (PostgreSQL).
 
@@ -254,7 +254,7 @@ Kubernetes-manifester ligger i Git ved siden af koden. Ofte bliver de pakket som
 
 ---
 
-## Del E: Kubernetes i praksis (valgfri, ca. 45 min)
+## Del E: Kubernetes i praksis (ca. 45 min, fordybelse)
 
 ### Slå Kubernetes til
 
@@ -441,7 +441,7 @@ Som analytiker er overvågning også kilden til svar på forretningsspørgsmål:
 ## Aflevering
 
 Lav en branch `opgaver/dag-6`, og aflevér via PR:
-- `noter/dag-6.md` med svar på øvelse 1, 3, 4, 6, 7, 9–11 (hvis du lavede del E) og 12
+- `noter/dag-6.md` med svar på øvelse 1, 3, 4 og 12 (og 6, 7 og 9–11, hvis du har lavet fordybelsen)
 - dine ændringer i `app.py` (øvelse 3) og evt. `deployment.yaml` (øvelse 10)
 
 ## Spørg Claude

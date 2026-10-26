@@ -1,6 +1,6 @@
 # Dag 4: At læse kode i Java og C#
 
-*Ca. 4–5 timer.*
+*Ca. 3 timer for kernen. **Kerne:** del A–C. **Fordybelse:** del D–F. Læs dem gerne, hvis du har tid. D og F får du brug for, når du skal finde forretningsregler i et rigtigt system, og E, hvis dit projekt bruger C#.*
 
 ## Hvorfor?
 
@@ -272,7 +272,7 @@ Maven-livscyklussen kører altid i rækkefølge: `compile` → `test` → `packa
 
 ---
 
-## Del D: Sådan ser et rigtigt system ud (ca. 30 min)
+## Del D: Sådan ser et rigtigt system ud (ca. 30 min, fordybelse)
 
 ### Lagdeling
 
@@ -355,7 +355,7 @@ Læg mærke til, at `MaalingService` ikke selv laver sit repository. Det får de
 
 ---
 
-## Del E: C# for Java-læsere (ca. 20 min)
+## Del E: C# for Java-læsere (ca. 20 min, fordybelse)
 
 C# og Java ligner hinanden så meget, at kan du læse det ene, kan du næsten læse det andet:
 
@@ -406,7 +406,7 @@ public class MaalingService
 
 ---
 
-## Del F: Sådan læser du en ukendt kodebase (ca. 15 min)
+## Del F: Sådan læser du en ukendt kodebase (ca. 15 min, fordybelse)
 
 På dit første projekt vil der være hundredtusindvis af linjer kode. Du skal ikke læse dem alle. Sådan finder du rundt:
 

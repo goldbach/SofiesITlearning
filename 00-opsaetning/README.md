@@ -1,13 +1,13 @@
 # Dag 0: Gør din Mac klar
 
-*Ca. 1 time. Gør det, inden du går i gang med dag 1.*
+*Ca. 1 time. Gør det, inden du går i gang med dag 1. Det hele er kerne.*
 
 Håndværkere starter med at have styr på deres værktøj, og det gør vi også her. Når du er færdig, har du:
 
 1. En **Claude-konto**, så du kan bruge Claude som tutor fra dag 1b.
 2. En god **terminal**: Ghostty.
 3. En opdateret **VS Code**, sat op til det her forløb.
-4. **Homebrew** og **GitHub CLI** (`gh`).
+4. En **GitHub-konto**, **Homebrew** og **GitHub CLI** (`gh`).
 5. Tjekket **Git** og **Python**.
 
 ---
@@ -134,6 +134,16 @@ Markdown bliver brugt overalt: README-filer, pull requests, Jira, Confluence og 
 
 ## 4. Homebrew og GitHub CLI
 
+### GitHub-konto
+
+Forløbet ligger på GitHub, og fra dag 1 afleverer du via pull requests. Det kræver en konto og skriveadgang til repoet:
+
+1. Opret en gratis konto på [github.com](https://github.com), hvis du ikke har en.
+2. Send dit brugernavn til din far, så han kan invitere dig til repoet.
+3. Acceptér invitationen. Den kommer på e-mail og på [github.com/notifications](https://github.com/notifications).
+
+### Homebrew
+
 **Homebrew** er en *package manager* til macOS: en app-butik til terminalen, hvor du installerer udviklerværktøjer med én kommando. Installér den med kommandoen fra [brew.sh](https://brew.sh):
 
 ```bash
@@ -174,6 +184,7 @@ python3 -m venv --help | head -1
 - [ ] VS Code er opdateret, og `code --version` virker i terminalen.
 - [ ] Extensions og indstillinger er på plads.
 - [ ] Jeg kan åbne en `.md`-fil i preview.
+- [ ] Jeg har en GitHub-konto og har accepteret invitationen til repoet.
 - [ ] `brew` og `gh` er installeret.
 - [ ] `git`, `python3`, `pip` og `venv` svarer alle sammen.
 
