@@ -269,11 +269,12 @@ Nu laver du det rigtige workflow på det her repo.
    gh auth login
    ```
    Vælg **GitHub.com**, **HTTPS**, svar **Yes** til at bruge dine GitHub-oplysninger til Git, og log ind via browseren.
-1. **Clone** forløbet:
+1. **Clone** forløbet. Indtil nu har du læst det på GitHub. Nu henter du din egen kopi:
    ```bash
    cd ~/kursus
    git clone https://github.com/goldbach/SofiesITlearning.git
    cd SofiesITlearning
+   code .                      # åbn det i VS Code. Fra nu af læser du tutorials her
    ```
 2. **Lav en branch** til dine noter. Navngiv den efter konventionen `<type>/<beskrivelse>`:
    ```bash

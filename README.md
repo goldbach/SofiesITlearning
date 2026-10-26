@@ -45,4 +45,14 @@ Hvis du har en ekstra dag, så brug den på fordybelsen i 03, 05 og 06 eller på
 
 ## Kom i gang
 
-Start med [dag 0](00-opsaetning/README.md). Den gør din Mac klar og opretter de konti, du skal bruge.
+1. **Læs i browseren til at begynde med.** Forløbet ligger på [github.com/goldbach/SofiesITlearning](https://github.com/goldbach/SofiesITlearning). GitHub viser Markdown-filerne pænt formateret, så du kan læse dag 0 og dag 1 direkte her.
+2. **Start med [dag 0](00-opsaetning/README.md).** Den gør din Mac klar og opretter de konti, du skal bruge.
+3. **Clone repoet på dag 1, del D.** Her henter du din egen kopi til din Mac og lærer at aflevere via pull requests. Kommandoerne er:
+   ```bash
+   mkdir -p ~/kursus && cd ~/kursus
+   git clone https://github.com/goldbach/SofiesITlearning.git
+   cd SofiesITlearning
+   code .
+   ```
+   Fra da af læser du tutorials i VS Code (`Cmd-Shift-V` for preview, se dag 0) og laver øvelserne i din kopi.
+4. **Hent nyt indhold fra GitHub.** Hvis forløbet bliver opdateret, efter du har clonet, henter du ændringerne med `git switch main` og `git pull`.
