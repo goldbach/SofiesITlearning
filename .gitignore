@@ -7,3 +7,6 @@ target/
 04-kode-java-csharp/sammenligning/sum_go
 __pycache__/
 .DS_Store
+*.pem
+id_ed25519
+id_rsa

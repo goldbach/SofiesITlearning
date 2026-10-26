@@ -27,6 +27,7 @@ Forløbet er på dansk, men fagudtrykkene står på engelsk, fordi det er dem, d
 | 4 | [At læse kode i Java og C#](04-kode-java-csharp/README.md) | Fortolket, kompileret og JIT. Typer, klasser, interfaces og tests, så du kan læse enterprise-kode |
 | 5 | [Fra behov til løsning](05-fra-behov-til-loesning/README.md) | Krav, user stories, acceptkriterier, Scrum, Jira, testniveauer og miljøer |
 | 6 | [Drift og cloud](06-drift-og-cloud/README.md) | Docker, containere, Kubernetes i overblik, Azure/AWS og logs |
+| 6b | [Kryptografi i praksis](06b-kryptografi/README.md) | Hashes, symmetrisk og asymmetrisk kryptering, signaturer, certifikater og SSH-nøgler |
 | 7 | [Sikkerhed og konsulentlivet](07-sikkerhed-og-konsulentlivet/README.md) | Login, OAuth2/OIDC, JWT, MitID/NemLog-in, GDPR, udbud og kunderelationer |
 
 ## Det skal du have

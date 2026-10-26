@@ -34,6 +34,10 @@ Se [ordlisten i tutorial 05](05-fra-behov-til-loesning/README.md#ordliste).
 
 Se [ordlisten i tutorial 06](06-drift-og-cloud/README.md#ordliste).
 
+## Dag 6b: Kryptografi i praksis
+
+Se [ordlisten i tutorial 06b](06b-kryptografi/README.md#ordliste).
+
 ## Dag 7: Sikkerhed og konsulentlivet
 
 Se [ordlisten i tutorial 07](07-sikkerhed-og-konsulentlivet/README.md#ordliste).

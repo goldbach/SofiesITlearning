@@ -39,7 +39,7 @@ Man kan bevise sin identitet med noget, man **ved** (password), noget, man **har
 
 ### Passwords gemmes aldrig
 
-Et system må **aldrig** gemme passwords, heller ikke krypteret. Det gemmer en **hash**: en envejsfunktion, der laver passwordet om til et fingeraftryk, som ikke kan regnes tilbage. Ved login hasher man det indtastede password og sammenligner fingeraftrykkene.
+Et system må **aldrig** gemme passwords, heller ikke krypteret. Det gemmer en **hash** (dag 6b, del A): et fingeraftryk, som ikke kan regnes tilbage. Ved login hasher man det indtastede password og sammenligner fingeraftrykkene.
 
 ```python
 import hashlib, os
@@ -119,7 +119,7 @@ Dertil kommer egne claims, f.eks. `roller`.
 > 2. **Et token er som en nøgle.** Den, der har det, *er* dig, indtil det udløber. Derfor er levetiden kort (minutter), og derfor må tokens ikke stå i logs, i Jira-sager eller i chatbeskeder.
 > 3. **Sæt aldrig et rigtigt token ind på en hjemmeside** for at "se, hvad der står i det", heller ikke på jwt.io. Brug `jwt_lab.afkod` eller tilsvarende lokalt.
 
-`jwt_lab.py` bruger **HS256**: én fælles hemmelig nøgle til både at signere og verificere. I praksis bruger identity providere oftest **RS256**: Den signerer med en *privat* nøgle, og alle systemer kan verificere med den tilsvarende *offentlige* nøgle. Så er det kun udstederen, der kan lave tokens.
+`jwt_lab.py` bruger **HS256**, som er en HMAC (dag 6b, del A): én fælles hemmelig nøgle til både at signere og verificere. I praksis bruger identity providere oftest **RS256**, som er en digital signatur (dag 6b, del D): Den signerer med en *privat* nøgle, og alle systemer kan verificere med den tilsvarende *offentlige* nøgle. Så er det kun udstederen, der kan lave tokens.
 
 ### Øvelser B
 
