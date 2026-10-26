@@ -1,4 +1,9 @@
 .venv/
 *.db
+target/
+*.class
+*.exe
+04-kode-java-csharp/sammenligning/sum_c
+04-kode-java-csharp/sammenligning/sum_go
 __pycache__/
 .DS_Store
