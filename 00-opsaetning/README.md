@@ -7,7 +7,7 @@ Håndværkere starter med at have styr på deres værktøj, og det gør vi også
 1. En **Claude-konto**, så du kan bruge Claude som tutor fra dag 1b.
 2. En god **terminal**: Ghostty.
 3. En opdateret **VS Code**, sat op til det her forløb.
-4. En **GitHub-konto**, **Homebrew** og **GitHub CLI** (`gh`).
+4. En **GitHub-konto**, **Homebrew**, **GitHub CLI** (`gh`) og en ny **Python**.
 5. Tjekket **Git** og **Python**.
 
 ---
@@ -150,14 +150,24 @@ Forløbet ligger på GitHub, og fra dag 1 afleverer du via pull requests. Det kr
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Følg instruktionerne til sidst. Du skal muligvis køre et par linjer, så `brew` kommer på din PATH. Luk og genåbn derefter Ghostty, og installér **GitHub CLI** (`gh`):
+Den beder om dit Mac-password og installerer også *Command Line Developer Tools* (med bl.a. `git`). Det kan tage 5–10 minutter.
+
+**Vigtigt:** Til sidst skriver installationen **Next steps** med to kommandoer, der starter med `echo` og `eval`. **Kør dem**, ellers kan shellen ikke finde `brew`. Typisk ser de sådan ud:
 
 ```bash
-brew install gh
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+Luk og genåbn Ghostty, og tjek med `brew --version`. Installér derefter **GitHub CLI** (`gh`) og en ny **Python**:
+
+```bash
+brew install gh python@3.13
 gh --version
 ```
 
-Med `gh` logger du ind på GitHub fra terminalen, så du kan pushe på dag 1.
+- Med `gh` logger du ind på GitHub fra terminalen, så du kan pushe på dag 1.
+- Den Python, der følger med macOS, er for gammel (3.9) til nogle af værktøjerne i forløbet. Homebrews Python 3.13 bliver lagt foran på din PATH, så `python3` fremover er den nye.
 
 ---
 
@@ -172,8 +182,8 @@ python3 -m pip --version
 python3 -m venv --help | head -1
 ```
 
-- Hvis `git` ikke er installeret, tilbyder macOS at installere *Command Line Developer Tools*. Sig ja, og vent til det er færdigt.
-- Alle fire kommandoer skal svare uden fejl. Hvis Python-versionen er ældre end 3.10, så sig til.
+- Alle fire kommandoer skal svare uden fejl.
+- `python3 --version` skal sige **3.13**. Siger den 3.9, har du ikke lukket og genåbnet Ghostty efter installationen, eller `brew`-linjerne ovenfor mangler. Tjek med `which python3`. Den skal pege på `/opt/homebrew/bin/python3`.
 
 ---
 
@@ -186,7 +196,7 @@ python3 -m venv --help | head -1
 - [ ] Jeg kan åbne en `.md`-fil i preview.
 - [ ] Jeg har en GitHub-konto og har accepteret invitationen til repoet.
 - [ ] `brew` og `gh` er installeret.
-- [ ] `git`, `python3`, `pip` og `venv` svarer alle sammen.
+- [ ] `git`, `python3` (3.13), `pip` og `venv` svarer alle sammen.
 
 ## Ordliste
 

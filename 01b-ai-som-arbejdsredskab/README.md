@@ -60,6 +60,14 @@ curl -fsSL https://claude.ai/install.sh | bash
 claude --version
 ```
 
+Svarer den `command not found: claude`, ligger programmet i `~/.local/bin`, og den mappe er ikke på din PATH (dag 0, ordlisten). Installationen skriver til sidst, hvad du skal gøre. Typisk er det:
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+```
+
+Åbn så et nyt vindue igen, og prøv `claude --version` en gang til.
+
 > **Læg mærke til** `curl ... | bash`. Kommandoen henter et script fra nettet og kører det med det samme. Det er normalt til installation, men gør det kun med kilder, du stoler på. Du kan altid læse scriptet først: `curl -fsSL https://claude.ai/install.sh | less`.
 
 ### Første session
@@ -147,18 +155,39 @@ AI-genereret kode, tekst og SQL skal reviewes som alt andet. "Det var AI'en, der
 
 ## Øvelser
 
-Lav dem i en Claude-session i repoet.
+Start med at lave en branch til dine noter fra en frisk `main`. Det er det samme ritual, du bruger hver dag fremover:
+
+```bash
+cd ~/kursus/SofiesITlearning
+git switch main && git pull
+git switch -c noter/dag-1b
+```
+
+Lav øvelserne i en Claude-session i repoet (`claude`), undtagen øvelse 4, som har sin egen mappe.
 
 1. **Mød din tutor.** Spørg Claude, hvad dens rolle er, og bed den forklare forskellen på `git add` og `git commit` med en analogi fra laboratoriet. Var analogien god?
 2. **Quiz.** Bed om en quiz med 5 spørgsmål i ordlisten fra dag 1.
 3. **Find en hallucination.** Spørg Claude om en meget specifik detalje, f.eks. *"Hvilke flag har `git log`, der kan vise commits fra en bestemt forfatter i et bestemt tidsrum?"*. Kontrollér svaret med `git help log`. Passede det hele?
-4. **Forklar uden at løse.** Lav en merge-konflikt som i øvelse C3 fra dag 1. Bed Claude forklare, hvad der står i filen, *uden* at løse den. Løs den selv.
+4. **Forklar uden at løse.** Lav en ny merge-konflikt i legerepoet fra dag 1, ikke i kursusrepoet:
+   ```bash
+   cd ~/kursus/git-leg
+   git switch main
+   git switch -c enhed-fahrenheit
+   sed -i.bak 's/temperaturserie.*/temperaturserie (°F)/' README.md && rm README.md.bak
+   git commit -am "Angiv enhed i fahrenheit"
+   git switch main
+   sed -i.bak 's/temperaturserie.*/temperaturserie (mK)/' README.md && rm README.md.bak
+   git commit -am "Angiv enhed i millikelvin"
+   git merge enhed-fahrenheit      # CONFLICT
+   claude
+   ```
+   Bed Claude forklare, hvad der står i filen og hvorfor, *uden* at løse konflikten. Løs den selv.
 5. **Brug tilladelserne bevidst.** Bed Claude om at vise indholdet af mappen `01-terminal-og-git`. Læs tilladelsesprompten, før du svarer.
 6. **Aflevér.** Skriv i `noter/dag-1b.md`:
    - Hvad var Claudes svar i øvelse 3, og hvad viste `git help log`?
    - Én ting, du *ikke* ville lægge ind i et AI-værktøj på jobbet, og hvorfor.
 
-   Aflever via en PR, som du lærte på dag 1. Du laver selv Git-kommandoerne. Claude er sat op til ikke at gøre det for dig.
+   Commit, push `noter/dag-1b`, og åbn en PR, som du lærte på dag 1. Du laver selv Git-kommandoerne. Claude er sat op til ikke at gøre det for dig.
 
 ---
 

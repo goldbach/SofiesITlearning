@@ -2,6 +2,8 @@
 
 *Ca. 2 timer. Tag den før dag 7, som bygger videre på den. **Kerne:** del A–E og G. **Fordybelse:** del F (SSH-nøgler).*
 
+**Start dagen:** `git switch main && git pull && git switch -c opgaver/dag-6b`. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
+
 ## Hvorfor?
 
 Kryptografi er overalt i det, du har lært: Git identificerer commits med hashes (dag 1), HTTPS beskytter trafikken med certifikater (dag 2), passwords bliver hashet, og login-tokens bliver signeret (dag 7). Du skal ikke selv opfinde kryptografi. Det skal *ingen*. Men du skal forstå byggeklodserne, så du kan læse et sikkerhedskrav, følge en arkitekturdiskussion og undgå de klassiske fejl.
@@ -60,7 +62,7 @@ Med 2²⁵⁶ ≈ 10⁷⁷ mulige værdier er der ifølge gængse skøn flere mu
   printf 'blob 4\0hej\n' | shasum -a 1
   ```
   Begge giver det samme. Git beregner SHA-1 af `"blob <længde>\0<indhold>"`. Et commit-ID fra dag 1 er hashen af commitets indhold, inklusive forælderens hash. Derfor kan historikken ikke ændres i det skjulte: Ændrer man ét gammelt commit, ændrer alle hashes efter det sig også. Det er samme princip som en *blockchain*.
-- **Passwords**: Det så du på dag 7. Her skal hashfunktionen være *langsom* med vilje (scrypt, bcrypt, Argon2), og et **salt** skal med.
+- **Passwords**: Det ser du på dag 7. Her skal hashfunktionen være *langsom* med vilje (scrypt, bcrypt, Argon2), og et **salt** skal med.
 
 > **Forældede algoritmer:** MD5 og SHA-1 er knækket i den forstand, at man kan konstruere kollisioner. De må ikke bruges til sikkerhed. Git bruger stadig SHA-1, men er ved at skifte til SHA-256. Brug **SHA-256** eller nyere.
 
@@ -296,7 +298,7 @@ Første gang du forbinder til en ny server, spørger SSH, om du stoler på serve
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-6b`, og aflevér via PR:
+Commit og push din branch `opgaver/dag-6b`, og aflevér via PR:
 - `noter/dag-6b.md` med svar på øvelse 1–7
 
 Læg **ikke** nøgler (`*.pem`, `id_ed25519`) i repoet. De er lavet i `~/kursus/krypto` og `~/.ssh`, ikke i kursusrepoet, og sådan skal det blive.

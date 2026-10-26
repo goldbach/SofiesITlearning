@@ -1,6 +1,8 @@
 # Dag 3: Data – SQL og datamodellering
 
-*Ca. 4 timer for kernen. **Kerne:** del A–F, undtagen øvelse 15. **Fordybelse:** øvelse 15 (gør API'et permanent) og SQL Murder Mystery.*
+*Ca. 5 timer for kernen. **Kerne:** del A–F, undtagen øvelse 15. **Fordybelse:** øvelse 15 (gør API'et permanent), SQLBolt og SQL Murder Mystery.*
+
+**Start dagen:** `git switch main && git pull && git switch -c opgaver/dag-3`. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
 
 ## Hvorfor?
 
@@ -18,7 +20,7 @@ Du har en kæmpe fordel: Du kan allerede pandas, og det meste af SQL er de samme
 | Hvornår | Hvad | Længde |
 |---------|------|--------|
 | **Før du starter** | [SQL Explained in 100 Seconds](https://www.youtube.com/watch?v=zsjvFFKOm3c) (Fireship) | 2 min |
-| **Efter del B** | [SQLBolt](https://sqlbolt.com/): interaktive SQL-øvelser i browseren. Lav lektion 1–12. **Det anbefales stærkt.** | 1–2 timer |
+| **Til fordybelse** | [SQLBolt](https://sqlbolt.com/): interaktive SQL-øvelser i browseren, lektion 1–12. Godt at tage efter del B, eller senere, hvis du vil have mere træning | 1–2 timer |
 | **Før del C** | [Entity Relationship Diagram (ERD) Tutorial – Part 1](https://www.youtube.com/watch?v=QpdhBUYk7Kk) (Lucid Software) | 7 min |
 | **Efter del C** | [Learn Database Normalization – 1NF, 2NF, 3NF, 4NF, 5NF](https://www.youtube.com/watch?v=GFQaEYEc8_8) (Decomplexify). Det er en af de bedste forklaringer på normalisering. Se til og med 3NF | 15 min |
 | **Belønning** | [The SQL Murder Mystery](https://mystery.knightlab.com/): løs et mord med SQL. Lavet til analytiske hjerner | 1 time |
@@ -274,7 +276,19 @@ Man taler ofte om tre niveauer: den **konceptuelle model** (hvilke ting findes, 
 
 ### Normalisering: hvorfor ikke bare ét stort regneark?
 
-Kig i [`forsoeg_regneark.csv`](forsoeg_regneark.csv). Det er de samme data, som de ofte ser ud i virkeligheden: én stor tabel, hvor alt står på hver linje. Indlæs den i pandas og kig:
+Kig i [`forsoeg_regneark.csv`](forsoeg_regneark.csv). Det er de samme data, som de ofte ser ud i virkeligheden: én stor tabel, hvor alt står på hver linje.
+
+Du skal bruge pandas. Den er ikke installeret i Homebrews Python, så lav et venv i mappen, som på dag 2 (det skal også bruges i del E):
+
+```bash
+cd ~/kursus/SofiesITlearning/03-sql-og-datamodellering
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pandas
+python3
+```
+
+Indlæs filen i pandas og kig:
 
 ```python
 import pandas as pd
@@ -308,7 +322,7 @@ Normalisering er ikke en religion. Til rapporter og analyse **denormaliserer** m
 
 ---
 
-## Del D: Case – tilskud til energirenovering (ca. 60 min)
+## Del D: Case – tilskud til energirenovering (ca. 90 min)
 
 Nu skal du modellere noget, der ligner det, du kommer til at arbejde med. En kommune vil have et system til ansøgninger om tilskud til energirenovering. Fra workshoppen med kunden har du disse noter:
 
@@ -352,7 +366,7 @@ df.groupby("forsoeg_id")["temperatur"].mean()
 pd.read_csv("forsoeg_regneark.csv").to_sql("regneark", conn, if_exists="replace", index=False)
 ```
 
-Hvis pandas ikke er installeret i din globale Python, så lav et venv som på dag 2 og kør `pip install pandas`.
+Brug det venv, du lavede i del C (`source .venv/bin/activate`).
 
 ### SQL injection: den vigtigste sikkerhedsregel
 
@@ -383,7 +397,7 @@ Det hedder **SQL injection** og har været en af de mest udnyttede sikkerhedsfej
     - Ved `INSERT` får du det nye id med `cursor.lastrowid`
     - Husk `conn.commit()` efter ændringer
     - Brug `?`-parametre, altid
-    - `.db`-filen skal ikke i Git. Tilføj `*.db` til `.gitignore`
+    - `.db`-filen skal ikke i Git. Tjek, at `*.db` står i `.gitignore` i roden af repoet
 
 ---
 
@@ -406,7 +420,7 @@ Du skal ikke kunne det her endnu, men du skal vide, hvad det betyder:
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-3`, og aflevér via PR:
+Commit og push din branch `opgaver/dag-3`, og aflevér via PR:
 - `noter/dag-3.sql`: dine forespørgsler fra øvelse 1–7
 - `noter/dag-3.md`: anomalier (8), Mermaid-diagrammer (9 og 10), status-overvejelser (11) og refleksion (14)
 - `noter/tilskud.sql`: tabeller, testdata og forespørgsler (11–13)

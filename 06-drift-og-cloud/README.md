@@ -2,6 +2,8 @@
 
 *Ca. 2 timer for kernen. **Kerne:** del A, B, D og F. **Fordybelse:** del C (Docker Compose) og del E (Kubernetes i praksis). I planen tager du A–B på dag 4 og D og F på dag 5.*
 
+**Start:** Modul 06 er delt over to dage. Lav branchen `opgaver/dag-6` fra en frisk `main`, når du går i gang med del A på dag 4 (`git switch main && git pull && git switch -c opgaver/dag-6`). På dag 5 fortsætter du på samme branch med `git switch opgaver/dag-6`. Lav først din PR, når del D og F er færdige. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
+
 ## Hvorfor?
 
 Indtil nu har din kode kørt på din egen Mac. Et rigtigt system skal køre på servere, døgnet rundt, for tusindvis af brugere. Det skal kunne opdateres uden nedetid og overleve, at en maskine går i stykker. Det er **drift** (*operations*, "ops").
@@ -296,9 +298,9 @@ Se på `"container"`. Svarene kommer fra forskellige pods. Servicen fordeler tra
 Vil du ramme API'et fra din Mac, så lav en tunnel:
 
 ```bash
-kubectl port-forward service/maalinger-api 8080:8080
+kubectl port-forward service/maalinger-api 9090:8080
 # i et andet faneblad:
-curl http://127.0.0.1:8080/info
+curl http://127.0.0.1:9090/info
 ```
 
 ### Selvheling
@@ -440,7 +442,7 @@ Som analytiker er overvågning også kilden til svar på forretningsspørgsmål:
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-6`, og aflevér via PR:
+Commit og push din branch `opgaver/dag-6`, og aflevér via PR:
 - `noter/dag-6.md` med svar på øvelse 1, 3, 4 og 12 (og 6, 7 og 9–11, hvis du har lavet fordybelsen)
 - dine ændringer i `app.py` (øvelse 3) og evt. `deployment.yaml` (øvelse 10)
 

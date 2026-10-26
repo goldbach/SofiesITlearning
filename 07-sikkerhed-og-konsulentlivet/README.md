@@ -1,6 +1,8 @@
 # Dag 7: Sikkerhed og konsulentlivet
 
-*Ca. 3½ time. Det hele er kerne. Del A–D handler om sikkerhed, del E–F om at være konsulent.*
+*Ca. 3½ time. Del A–D handler om sikkerhed, del E–F om at være konsulent. **Kerne:** det hele, undtagen øvelse 4. **Fordybelse:** øvelse 4 (beskyt API'et) og OAuth-videoen.*
+
+**Start dagen:** `git switch main && git pull && git switch -c opgaver/dag-7`. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
 
 ## Hvorfor?
 
@@ -13,7 +15,7 @@ Samtidig er du konsulent. Det betyder, at du arbejder i *kundens* systemer, med 
 | Hvornår | Hvad | Længde |
 |---------|------|--------|
 | **Før del B** | [Session vs Token Authentication in 100 Seconds](https://www.youtube.com/watch?v=UBUNrFtufWo) (Fireship) | 2 min |
-| **Før del C** | [OAuth 2.0 and OpenID Connect (in plain English)](https://www.youtube.com/watch?v=996OiexHze0) (OktaDev): den bedste forklaring på emnet. Den er lang, men værd at se | 60 min |
+| **Til fordybelse** | [OAuth 2.0 and OpenID Connect (in plain English)](https://www.youtube.com/watch?v=996OiexHze0) (OktaDev): den bedste forklaring på emnet. Den er lang, men værd at se, når du skal arbejde med login | 60 min |
 | **Opslag** | [OWASP Top 10](https://owasp.org/www-project-top-ten/): de ti mest kritiske sikkerhedsrisici i webapplikationer | – |
 | **Opslag** | [Datatilsynet](https://www.datatilsynet.dk/): vejledninger om GDPR på dansk | – |
 | **Opslag** | [NemLog-in](https://www.nemlog-in.dk/) og [MitID](https://www.mitid.dk/) | – |
@@ -126,7 +128,7 @@ Dertil kommer egne claims, f.eks. `roller`.
 1. Læs `jwt_lab.py`. Find de tre dele, og forklar med dine egne ord, hvad `signer` og `verificer` gør.
 2. Afkod payloaden fra tokenet i dit eget output med `base64 -d`. Hvornår udløber tokenet? *Hint:* `date -r <exp>` på Mac.
 3. `verificer` tjekker signatur og udløb, men ikke `aud`. Hvorfor er det et problem? Forestil dig, at det samme login-system udsteder tokens til både en kantine-app og tilskudssystemet. Tilføj et tjek af `aud`.
-4. **Beskyt API'et.** Kopiér `server.py` fra dag 2 hertil, og få `POST /maalinger` til at kræve et gyldigt token med rollen `laborant`:
+4. **Beskyt API'et** (fordybelse). Kopiér `server.py` fra dag 2 hertil, og få `POST /maalinger` til at kræve et gyldigt token med rollen `laborant`:
    - Intet eller ugyldigt token: `401`
    - Gyldigt token, men uden rollen: `403`
    - `GET` må stadig være åben
@@ -325,9 +327,10 @@ Det her repo er dit. Brug det:
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-7`, og aflevér via PR:
+Commit og push din branch `opgaver/dag-7`, og aflevér via PR:
 - `noter/dag-7.md` med svar på øvelse 1, 2, 3, 5 og 6
-- `jwt_lab.py` med `aud`-tjek (øvelse 3) og `server.py` med beskyttet `POST` (øvelse 4)
+- `jwt_lab.py` med `aud`-tjek (øvelse 3)
+- hvis du har lavet fordybelsen: `server.py` med beskyttet `POST` (øvelse 4)
 
 ## Spørg Claude
 

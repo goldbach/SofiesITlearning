@@ -6,7 +6,7 @@ Målet er **ikke**, at du kan det hele. Målet er, at du ved, hvad folk taler om
 
 ## Sådan bruger du forløbet
 
-- **Kerne og fordybelse.** Øverst i hver tutorial står, hvilke dele der er **kerne**, og hvilke der er **fordybelse**. Kernen er planlagt til 4–5 timer om dagen. Fordybelsen er der, hvis du har tid eller lyst, nu eller senere på jobbet.
+- **Kerne og fordybelse.** Øverst i hver tutorial står, hvilke dele der er **kerne**, og hvilke der er **fordybelse**. Kernen er planlagt til 4½–5½ time om dagen. Det er tidsangivelser for en, der er ny i faget. Går det hurtigere, så tag fordybelsen med. Fordybelsen er der, hvis du har tid eller lyst, nu eller senere på jobbet.
 - **Lav øvelserne.** Du lærer mere af at skrive kommandoerne selv end af at læse om dem.
 - **Aflevér via pull requests.** Tutorial 01 lærer dig Git. Derefter afleverer du dine noter og løsninger som PR'er til det her repo, præcis som du kommer til at gøre på jobbet. Kun kerneøvelserne skal afleveres.
 - **Videoer.** Hver tutorial har en liste med videoer og interaktivt materiale med anvisninger om, *hvornår* du skal se hvad. De er et supplement, ikke et krav.
@@ -19,9 +19,9 @@ Forløbet er på dansk, men fagudtrykkene står på engelsk, fordi det er dem, d
 
 | Dag | Kerne | Ca. tid |
 |-----|-------|---------|
-| 1 | [00 Gør din Mac klar](00-opsaetning/README.md) og [01 Terminal og Git](01-terminal-og-git/README.md) | 4 t |
-| 2 | [01b AI som arbejdsredskab](01b-ai-som-arbejdsredskab/README.md) og [02 Hvordan et system hænger sammen](02-system-og-api/README.md) | 5 t |
-| 3 | [03 Data: SQL og datamodellering](03-sql-og-datamodellering/README.md) | 4 t |
+| 1 | [00 Gør din Mac klar](00-opsaetning/README.md) og [01 Terminal og Git](01-terminal-og-git/README.md) | 5 t |
+| 2 | [01b AI som arbejdsredskab](01b-ai-som-arbejdsredskab/README.md) og [02 Hvordan et system hænger sammen](02-system-og-api/README.md) | 5½ t |
+| 3 | [03 Data: SQL og datamodellering](03-sql-og-datamodellering/README.md) | 5 t |
 | 4 | [04 At læse kode i Java og C#](04-kode-java-csharp/README.md) og [06 Drift og cloud](06-drift-og-cloud/README.md), del A–B | 4½ t |
 | 5 | [05 Fra behov til løsning](05-fra-behov-til-loesning/README.md) og 06 Drift og cloud, del D og F | 5 t |
 | 6 | [06b Kryptografi i praksis](06b-kryptografi/README.md) og [07 Sikkerhed og konsulentlivet](07-sikkerhed-og-konsulentlivet/README.md) | 5 t |
@@ -55,4 +55,4 @@ Hvis du har en ekstra dag, så brug den på fordybelsen i 03, 05 og 06 eller på
    code .
    ```
    Fra da af læser du tutorials i VS Code (`Cmd-Shift-V` for preview, se dag 0) og laver øvelserne i din kopi.
-4. **Hent nyt indhold fra GitHub.** Hvis forløbet bliver opdateret, efter du har clonet, henter du ændringerne med `git switch main` og `git pull`.
+4. **Hver dag starter med en frisk branch fra `main`.** Se [ritualet på dag 1](01-terminal-og-git/README.md#ritualet-hver-dag-fremover). Her står også, hvorfor `main` efterhånden bliver *din* version af forløbet.

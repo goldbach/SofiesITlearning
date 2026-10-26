@@ -2,6 +2,8 @@
 
 *Ca. 3 timer for kernen. **Kerne:** del A–C. **Fordybelse:** del D–F. Læs dem gerne, hvis du har tid. D og F får du brug for, når du skal finde forretningsregler i et rigtigt system, og E, hvis dit projekt bruger C#.*
 
+**Start dagen:** `git switch main && git pull && git switch -c opgaver/dag-4`. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
+
 ## Hvorfor?
 
 De store forretningssystemer, Netcompany bygger, er typisk skrevet i **Java** eller **C#**. Som analytiker skal du ikke skrive dem, men du skal kunne:
@@ -422,7 +424,7 @@ På dit første projekt vil der være hundredtusindvis af linjer kode. Du skal i
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-4`, og aflevér via PR:
+Commit og push din branch `opgaver/dag-4`, og aflevér via PR:
 - `noter/dag-4.md` med tiderne fra eksperiment 1, dine observationer fra eksperiment 2 og 3, og svar på øvelse 1–5
 - dine rettelser i `MaalingService.java` og `MaalingServiceTest.java` (øvelse 6 og 7)
 

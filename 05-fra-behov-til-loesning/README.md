@@ -2,6 +2,8 @@
 
 *Ca. 4 timer. Det hele er kerne. Det er det modul, der ligger tættest på dit kommende job. I dag er der mindre kode og mere af det, du kommer til at lave hver dag.*
 
+**Start dagen:** `git switch main && git pull && git switch -c opgaver/dag-5`. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
+
 ## Hvorfor?
 
 De fleste IT-projekter, der går galt, går ikke galt på grund af dårlig kode. De går galt, fordi man har bygget det forkerte: Kravene var uklare, kunden og leverandøren forstod dem forskelligt, eller ingen spurgte "hvad sker der, hvis ...?".
@@ -342,7 +344,7 @@ Den kæde er det, analytikeren holder styr på. Når kunden spørger *"er krav 1
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-5`, og aflevér via PR:
+Commit og push din branch `opgaver/dag-5`, og aflevér via PR:
 - `noter/dag-5.md` med øvelse 1, 2, 4, 5, 6, 8, 9, 10 og 12
 - dine user stories som Issues (øvelse 3 og 7) og din fejlrapport (øvelse 11). Link til dem fra `noter/dag-5.md`
 

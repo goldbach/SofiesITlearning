@@ -1,6 +1,6 @@
 # Dag 1: Terminal og Git
 
-*Ca. 3 timer. Del A–D er kerne. Videoerne til fordybelse er valgfri.*
+*Ca. 3½ time inkl. Learn Git Branching. Del A–D er kerne. Videoerne til fordybelse er valgfri.*
 
 ## Hvorfor starter vi her?
 
@@ -17,8 +17,8 @@ Alt er på engelsk.
 | Hvornår | Hvad | Længde |
 |---------|------|--------|
 | **Før du starter** | [Git Explained in 100 Seconds](https://www.youtube.com/watch?v=hwP7WQkmECE) (Fireship): det store billede på to minutter | 2 min |
-| **Efter del A** | [MIT Missing Semester, Lecture 1: The Shell](https://www.youtube.com/watch?v=Z56Jmr9Z34Q): fra MIT-kurset om de værktøjer, uddannelserne glemmer at lære fra sig | 50 min |
-| **Efter del B** | [Learn Git Branching](https://learngitbranching.js.org/): interaktivt i browseren, hvor du ser commit-træet ændre sig, mens du skriver. Lav *Introduction Sequence* og *Push & Pull*. **Det anbefales stærkt.** | 30–60 min |
+| **Efter del B** | [Learn Git Branching](https://learngitbranching.js.org/): interaktivt i browseren, hvor du ser commit-træet ændre sig, mens du skriver. Lav *Introduction Sequence*. Har du tid, så tag også *Push & Pull*. | 20–40 min |
+| **Til fordybelse** | [MIT Missing Semester, Lecture 1: The Shell](https://www.youtube.com/watch?v=Z56Jmr9Z34Q): fra MIT-kurset om de værktøjer, uddannelserne glemmer at lære fra sig | 50 min |
 | **Til fordybelse** | [MIT Missing Semester, Lecture 6: Version Control (git)](https://www.youtube.com/watch?v=2sjqTHE0zok): hvordan Git er bygget indeni. Godt for den analytiske type | 85 min |
 | **Til fordybelse** | [Git and GitHub for Beginners – Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk) (freeCodeCamp): alternativ gennemgang med GitHub og pull requests | 70 min |
 
@@ -280,7 +280,7 @@ Nu laver du det rigtige workflow på det her repo.
    ```bash
    git switch -c noter/dag-1
    ```
-3. Lav filen `noter/dag-1.md` med:
+3. Lav mappen med `mkdir -p noter`, og lav filen `noter/dag-1.md` med:
    - 3 ting du lærte i dag
    - 1 ting der stadig er uklar
    - Din løsning på øvelse A4: hvad gjorde `>`?
@@ -292,14 +292,29 @@ Nu laver du det rigtige workflow på det her repo.
    ```
 5. Gå ind på GitHub. Der står et banner med **"Compare & pull request"**. Klik på det, skriv en kort beskrivelse, og tilføj din far som **reviewer**.
 6. Vent på review. Hvis du får kommentarer, retter du lokalt, laver commit og push igen. PR'en opdaterer sig selv.
-7. Når PR'en er godkendt og merget:
+7. Når PR'en er godkendt og merget, rydder du op. Branchen på GitHub bliver slettet automatisk ved merge:
    ```bash
    git switch main
    git pull                     # hent den mergede version
-   git branch -d noter/dag-1
+   git branch -d noter/dag-1    # slet din lokale kopi af branchen
    ```
 
 Det er hele arbejdsgangen. Du kommer til at gøre det hundredvis af gange.
+
+### Ritualet hver dag fremover
+
+Start **hver** ny dag og hver ny opgave med en frisk branch fra `main`, også selvom gårsdagens PR stadig venter på review:
+
+```bash
+cd ~/kursus/SofiesITlearning
+git switch main
+git pull                          # hent det, der er merget siden sidst
+git switch -c opgaver/dag-2       # ny branch til dagens opgaver
+```
+
+Laver du i stedet den nye branch, mens du står på gårsdagens, kommer gårsdagens commits med i den nye PR. Så bliver PR'erne lagt oven på hinanden og er svære at reviewe. Gårsdagens PR kan sagtens leve videre for sig selv. Får du kommentarer til den, skifter du tilbage med `git switch opgaver/dag-1`, retter, committer og pusher.
+
+**Om `main`:** Efterhånden som dine PR'er bliver merget, kommer dine løsninger ind i kursusfilerne på `main`. `main` bliver altså *din* version af forløbet, og koden vil afvige fra det, der står i tutorials. Det er meningen. Hvis din far senere retter i en fil, du også har rettet i, får du en merge-konflikt ved `git pull`. Den løser du som i øvelse C3.
 
 ---
 

@@ -1,6 +1,8 @@
 # Dag 2: Hvordan et system hænger sammen
 
-*Ca. 3½ time for kernen. **Kerne:** del A–D og F. **Fordybelse:** del E og øvelse 12.*
+*Ca. 4 timer for kernen. **Kerne:** del A–D og F. **Fordybelse:** del E, øvelse 5 og øvelse 12.*
+
+**Start dagen:** `git switch main && git pull && git switch -c opgaver/dag-2`. Se [ritualet på dag 1](../01-terminal-og-git/README.md#ritualet-hver-dag-fremover).
 
 ## Hvorfor?
 
@@ -230,7 +232,7 @@ Prøv også at åbne http://127.0.0.1:8000/maalinger i browseren. Browseren er b
    *Hint:* Ved 204 kalder du `self.send_response(204)` og `self.end_headers()`, og ikke `send_json`.
 4. **Validering.** Lige nu kan man oprette en måling med `"temperatur": "varmt"`. Ret `do_POST`, så den svarer `400`, hvis temperatur eller tryk ikke er et tal.
    *Hint:* `isinstance(x, (int, float))`.
-5. **Filtrering med query string.** Få `GET /maalinger?min_temperatur=20` til kun at returnere målinger med temperatur ≥ 20.
+5. **Filtrering med query string** (fordybelse). Få `GET /maalinger?min_temperatur=20` til kun at returnere målinger med temperatur ≥ 20.
    *Hint:* `from urllib.parse import parse_qs` og `parse_qs(urlsplit(self.path).query)`.
 6. **Genstart serveren** (Ctrl-C og start igen). Hvor blev de målinger af, som du oprettede? Hvorfor? Svaret fører direkte til dag 3.
 
@@ -262,6 +264,8 @@ pip freeze > requirements.txt       # skriv de præcise versioner ned
 ### Kør det
 
 Læs [`app.py`](app.py). Det er det samme API som `server.py`. Sammenlign længden.
+
+Stop først `server.py` med Ctrl-C, hvis den stadig kører. Begge bruger port 8000, og kun ét program kan lytte på en port ad gangen (mere om det i del F).
 
 ```bash
 fastapi dev app.py
@@ -428,8 +432,8 @@ Kundens systemer ligger sjældent åbent på internettet. Du kommer til at høre
 
 ## Aflevering
 
-Lav en branch `opgaver/dag-2`, og aflevér via PR:
-- dine ændringer i `server.py` (øvelse 3–5) og `app.py` (øvelse 8)
+Commit og push din branch `opgaver/dag-2`, og aflevér via PR:
+- dine ændringer i `server.py` (øvelse 3–4, og 5, hvis du har lavet den) og `app.py` (øvelse 8)
 - `requirements.txt`
 - `noter/dag-2.md` med dine svar på øvelse 1, 2, 6, 9, 11 og 13
 
