@@ -1,6 +1,6 @@
 # Dag 2: Hvordan et system hænger sammen
 
-*Ca. 3–4 timer.*
+*Ca. 4–5 timer. Del F kan tages som en separat blok.*
 
 ## Hvorfor?
 
@@ -298,12 +298,140 @@ Testere og analytikere bruger Network-fanen dagligt til at se, hvad der faktisk 
 
 ---
 
+## Del F: Netværk og porte (ca. 45 min)
+
+Du skal ikke designe netværk, men du skal kunne følge med, når nogen siger "porten er ikke åbnet i firewallen" eller "er du på VPN?". Du skal også kunne lave den første fejlfinding selv.
+
+### IP-adresser og porte
+
+En **IP-adresse** identificerer en maskine på netværket. En **port** er et nummer fra 0 til 65535, som identificerer et bestemt program *på* maskinen. Tænk på et kontorhus: IP-adressen er gadeadressen, og porten er lokalenummeret.
+
+Når et serverprogram starter, beder det styresystemet om at **lytte** (*listen*) på en port. Kun ét program ad gangen kan lytte på samme port og adresse.
+
+Prøv det. Start `server.py` i ét faneblad, og start den igen i et andet:
+
+```
+OSError: [Errno 48] Address already in use
+```
+
+Den fejl møder du igen og igen. Find ud af, hvem der optager porten:
+
+```bash
+lsof -nP -iTCP:8000 -sTCP:LISTEN
+```
+
+Svaret viser programnavnet og dets **PID** (*process ID*). Stop det med Ctrl-C i dets faneblad, eller med `kill <PID>`.
+
+> `-nP` betyder "vis tal". Uden det oversætter `lsof` port 8000 til et gammelt servicenavn (`irdmi`), som ikke giver mening for nogen.
+
+### Porte du vil møde
+
+| Port | Hvad |
+|------|------|
+| 22 | SSH: log ind på en server via terminalen |
+| 80 / 443 | HTTP / HTTPS |
+| 1433 | Microsoft SQL Server |
+| 1521 | Oracle-database |
+| 5432 | PostgreSQL |
+| 3000, 5173, 8000, 8080 | Typiske udviklingsservere på din egen maskine |
+
+Porte under 1024 kræver administratorrettigheder. Derfor kører udviklingsservere på høje porte.
+
+### TCP og UDP
+
+Data bliver sendt i små **pakker**. To protokoller bestemmer, hvordan det sker:
+
+| | **TCP** | **UDP** |
+|---|---------|---------|
+| Pålidelighed | Alt kommer frem, i rigtig rækkefølge, og tabte pakker bliver sendt igen | Ingen garanti |
+| Hastighed | Lidt langsommere: forbindelsen bliver etableret først (*handshake*) | Hurtig |
+| Bruges af | HTTP, databaser, SSH, mail | DNS, video, telefoni, spil |
+
+Når nogen siger "port 443", mener de næsten altid TCP-port 443.
+
+### Hvem kan nå din server? `127.0.0.1` og `0.0.0.0`
+
+Kig i bunden af `server.py`:
+
+```python
+adresse = ("127.0.0.1", 8000)
+```
+
+- `127.0.0.1` (**localhost**): serveren kan **kun** nås fra din egen maskine.
+- `0.0.0.0`: serveren lytter på **alle** netværkskort og kan nås fra andre maskiner på netværket.
+
+Udviklingsservere kører på `127.0.0.1` som standard. Det er en sikkerhedsbeslutning.
+
+### Privat og offentlig IP
+
+```bash
+ipconfig getifaddr en0             # din IP på det lokale netværk (wifi)
+curl https://api.ipify.org         # den IP, internettet ser dig med
+```
+
+De er forskellige. Hjemme og på kontoret har du en **privat IP**, typisk `192.168.x.x`, `10.x.x.x` eller `172.16–31.x.x`. Den kan kun bruges på det lokale netværk. Routeren deler én **offentlig IP** mellem alle enhederne. Det kaldes **NAT** (*network address translation*). Derfor kan internettet ikke bare kontakte din bærbare, men din bærbare kan godt kontakte internettet.
+
+### Fejlfinding: fire kommandoer
+
+```bash
+nslookup api.github.com          # DNS: hvilken IP har navnet? (eller: dig +short api.github.com)
+ping -c 4 api.github.com         # kan jeg nå maskinen, og hvor lang tid tager det (ms)?
+nc -vz api.github.com 443        # er der hul igennem til netop den port?
+traceroute api.github.com        # hvilken vej går pakkerne? (stop med Ctrl-C)
+```
+
+`nc -vz` (*netcat*) er den mest brugbare til fejlfinding. Den svarer på spørgsmålet: kan jeg få forbindelse til *den* port på *den* maskine? Læg mærke til de tre mulige svar:
+
+| Svar | Betydning |
+|------|-----------|
+| `succeeded!` | Der er hul igennem, og noget lytter |
+| `Connection refused` | Maskinen kan nås, men intet lytter på porten. Serveren kører måske ikke |
+| `Operation timed out` | Intet svar. Typisk blokerer en **firewall**, eller du er ikke på det rigtige netværk |
+
+Prøv selv:
+
+```bash
+nc -vz 127.0.0.1 8000                  # med server.py kørende, og uden
+nc -vz -G 3 api.github.com 8443        # en port, GitHub ikke har åben
+```
+
+> `ping` er ikke altid til at stole på. Mange servere og firewalls ignorerer ping med vilje. Hvis ping ikke svarer, er det ikke et bevis på, at maskinen er nede.
+
+### Konsulent-hverdagen: VPN, firewall, proxy og certifikater
+
+Kundens systemer ligger sjældent åbent på internettet. Du kommer til at høre disse sætninger:
+
+- **"Er du på VPN?"** Et **VPN** (*virtual private network*) er en krypteret tunnel ind på kundens netværk. Uden det kan du ikke nå test- og udviklingsmiljøerne. Typisk symptom: `Operation timed out` eller "siden kan ikke findes".
+- **"Porten er ikke åbnet i firewallen."** En **firewall** bestemmer, hvilken trafik der må komme igennem, fra hvor og til hvilke porte. Når to systemer skal integreres, skal der ofte bestilles en **firewall-åbning** hos kundens driftsleverandør. Det kan tage uger, så analytikeren gør klogt i at få det med i planen tidligt.
+- **"Du skal igennem proxyen."** En **proxy** er en mellemstation, som trafikken skal igennem, typisk ud mod internettet i store organisationer. `pip install` og `curl` virker ikke, før proxyen er sat op.
+- **"Certifikatet er udløbet."** HTTPS bruger **TLS-certifikater** til at bevise, at serveren er den, den udgiver sig for at være. Et certifikat har en udløbsdato. Når den passerer, holder integrationerne op med at virke. Det er en klassisk produktionsfejl. Se GitHubs certifikat:
+  ```bash
+  curl -svI https://api.github.com 2>&1 | grep -iE "subject:|issuer:|expire"
+  ```
+
+### Øvelser F
+
+10. **Optaget port.** Fremprovokér `Address already in use`, find PID'en med `lsof`, og stop den rigtige proces.
+11. **Refused eller timeout?** Kør `nc -vz 127.0.0.1 8000` med og uden server. Kør også `nc -vz -G 3 api.github.com 8443`. Skriv ned, hvad de tre svar betyder.
+12. **Kald din server fra telefonen.**
+    1. Ret `adresse` i `server.py` til `("0.0.0.0", 8000)`, og start serveren.
+    2. Hvis macOS spørger, om Python må modtage indgående forbindelser, så tillad det.
+    3. Find din private IP med `ipconfig getifaddr en0`.
+    4. Åbn `http://<din-ip>:8000/maalinger` i telefonens browser. Telefonen skal være på samme wifi.
+    5. Kig i serverens log. Hvilken IP kommer requesten fra?
+    6. **Ret den tilbage til `127.0.0.1` bagefter.** En udviklingsserver skal ikke stå åben på en café-wifi.
+
+    Virker det ikke? Gæste- og firmanetværk blokerer ofte for, at enheder taler direkte sammen. Det er i sig selv en lektion i firewalls.
+13. **Hvor bor GitHub?** Find IP-adressen på `api.github.com` med `nslookup`, og hvornår certifikatet udløber.
+
+---
+
 ## Aflevering
 
 Lav en branch `opgaver/dag-2`, og aflevér via PR:
 - dine ændringer i `server.py` (øvelse 3–5) og `app.py` (øvelse 8)
 - `requirements.txt`
-- `noter/dag-2.md` med dine svar på øvelse 1, 2, 6 og 9
+- `noter/dag-2.md` med dine svar på øvelse 1, 2, 6, 9, 11, 12.5 og 13
 
 ## Spørg Claude
 
@@ -312,6 +440,8 @@ Lav en branch `opgaver/dag-2`, og aflevér via PR:
 - *"Gennemgå min `do_DELETE`. Er der fejl? Giv mig hints, ikke en rettet version."*
 - *"Hvad er forskellen på REST og SOAP, og hvorfor findes SOAP stadig?"*
 - *"Quiz mig i statuskoderne."*
+- *"Jeg kan ikke nå kundens testmiljø, og `nc` giver timeout. Hvilke spørgsmål skal jeg stille, og til hvem?"*
+- *"Forklar NAT med en analogi."*
 
 ## Tjekliste: kan du...
 
@@ -323,6 +453,10 @@ Lav en branch `opgaver/dag-2`, og aflevér via PR:
 - [ ] forklare, hvad REST er, og hvad et endpoint er?
 - [ ] lave et venv og installere en pakke?
 - [ ] forklare, hvad en OpenAPI-specifikation er, og hvorfor den er vigtig?
+- [ ] forklare forskellen på en IP-adresse og en port, og finde ud af, hvem der optager en port?
+- [ ] forklare forskellen på `127.0.0.1` og `0.0.0.0`, og på en privat og en offentlig IP?
+- [ ] bruge `nc -vz` og forklare forskellen på "refused" og "timed out"?
+- [ ] forklare, hvad VPN, firewall, proxy og TLS-certifikat er, med én sætning hver?
 
 ## Ordliste
 
@@ -343,7 +477,21 @@ Lav en branch `opgaver/dag-2`, og aflevér via PR:
 | **URL** | Adressen: scheme, host, port, path, query |
 | **DNS** | Oversætter navne til IP-adresser |
 | **localhost / 127.0.0.1** | Din egen maskine |
-| **port** | "Døren" på en server, f.eks. 443 eller 8000 |
+| **port** | Nummeret på et bestemt program på en maskine, f.eks. 443 eller 8000 |
+| **listen / lytte** | En server, der venter på forbindelser på en port |
+| **PID** | *Process ID*: nummeret på et kørende program |
+| **TCP / UDP** | Pålidelig transport (HTTP, databaser) / hurtig, upålidelig transport (DNS, video) |
+| **`0.0.0.0`** | "Lyt på alle netværkskort", så serveren kan nås udefra |
+| **privat / offentlig IP** | Adresse på det lokale netværk (`192.168.x.x`) / den adresse, internettet ser |
+| **NAT** | Routeren deler én offentlig IP mellem mange enheder |
+| **firewall** | Regler for, hvilken trafik der må komme igennem |
+| **firewall-åbning** | En bestilling på at åbne for trafik mellem to systemer. Kan tage lang tid |
+| **VPN** | En krypteret tunnel ind på et andet netværk, f.eks. kundens |
+| **proxy** | En mellemstation, trafikken skal igennem |
+| **TLS / certifikat** | Kryptering i HTTPS / et digitalt bevis for serverens identitet, med udløbsdato |
+| **SSH** | Krypteret login på en server via terminalen (port 22) |
+| **ping / traceroute / nslookup / nc** | Kan jeg nå den? / Hvilken vej? / Hvilken IP? / Er porten åben? |
+| **timeout / connection refused** | Intet svar, ofte en firewall / intet lytter på porten |
 | **JSON** | Det mest udbredte dataformat mellem systemer |
 | **XML / SOAP** | Ældre dataformat / ældre webservice-standard. Findes i mange offentlige integrationer |
 | **REST** | En stil for HTTP-API'er: ressourcer i URL'en, handling i metoden |
