@@ -25,7 +25,7 @@ Forløbet er på dansk, men fagudtrykkene står på engelsk, fordi det er dem, d
 | 2 | [Hvordan et system hænger sammen](02-system-og-api/README.md) | Klient/server, HTTP, REST, JSON. Du bygger et mini-API i Python |
 | 3 | [Data: SQL og datamodellering](03-sql-og-datamodellering/README.md) | Fra `pandas` til SQL, tabeller, nøgler, ER-diagrammer og normalisering |
 | 4 | [At læse kode i Java og C#](04-kode-java-csharp/README.md) | Fortolket, kompileret og JIT. Typer, klasser, interfaces og tests, så du kan læse enterprise-kode |
-| 5 | Fra behov til løsning | Krav, user stories, acceptkriterier, Scrum, Jira, testniveauer og miljøer |
+| 5 | [Fra behov til løsning](05-fra-behov-til-loesning/README.md) | Krav, user stories, acceptkriterier, Scrum, Jira, testniveauer og miljøer |
 | 6 | Drift og cloud | Docker, containere, Kubernetes i overblik, Azure/AWS og logs |
 | 7 | Sikkerhed og konsulentlivet | Login, OAuth2/OIDC, JWT, MitID/NemLog-in, GDPR, udbud og kunderelationer |
 
