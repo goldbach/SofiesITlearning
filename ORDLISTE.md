@@ -17,3 +17,7 @@ Se [ordlisten i tutorial 01b](01b-ai-som-arbejdsredskab/README.md#ordliste).
 ## Dag 2: Hvordan et system hænger sammen
 
 Se [ordlisten i tutorial 02](02-system-og-api/README.md#ordliste).
+
+## Dag 3: Data – SQL og datamodellering
+
+Se [ordlisten i tutorial 03](03-sql-og-datamodellering/README.md#ordliste).

@@ -23,7 +23,7 @@ Forløbet er på dansk, men fagudtrykkene står på engelsk, fordi det er dem, d
 | 1 | [Terminal og Git](01-terminal-og-git/README.md) | Hvor koden bor, og hvordan et team arbejder i den samme kode |
 | 1b | [AI som arbejdsredskab](01b-ai-som-arbejdsredskab/README.md) | LLM'er, Claude Code som din tutor, og hvad du må og ikke må som konsulent |
 | 2 | [Hvordan et system hænger sammen](02-system-og-api/README.md) | Klient/server, HTTP, REST, JSON. Du bygger et mini-API i Python |
-| 3 | Data: SQL og datamodellering | Fra `pandas` til SQL, tabeller, nøgler, ER-diagrammer og normalisering |
+| 3 | [Data: SQL og datamodellering](03-sql-og-datamodellering/README.md) | Fra `pandas` til SQL, tabeller, nøgler, ER-diagrammer og normalisering |
 | 4 | At læse kode i Java/C# | Typer, klasser, interfaces og tests, så du kan læse enterprise-kode |
 | 5 | Fra behov til løsning | Krav, user stories, acceptkriterier, Scrum, Jira, testniveauer og miljøer |
 | 6 | Drift og cloud | Docker, containere, Kubernetes i overblik, Azure/AWS og logs |
