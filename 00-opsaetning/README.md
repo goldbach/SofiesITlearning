@@ -18,7 +18,7 @@ Håndværkere starter med at have styr på deres værktøj, og det gør vi også
 2. Vælg abonnementet **Pro**. Gratisversionen giver ikke adgang til Claude Code, som du skal bruge i terminalen.
 3. Du kan også bruge Claude i browseren og i mobil-appen, men forløbet bruger primært **Claude Code** i terminalen. Den installerer du på dag 1b.
 
-> Brug din **private** e-mail til den her konto. Det, du laver på jobbet, skal foregå i de værktøjer og på de konti, Netcompany og kunden har godkendt. Mere om det på dag 1b.
+> Brug din **private** e-mail til den her konto. Det, du laver på jobbet, skal foregå i de værktøjer og på de konti, konsulenthuset og kunden har godkendt. Mere om det på dag 1b.
 
 ---
 

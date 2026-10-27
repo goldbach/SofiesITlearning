@@ -37,7 +37,7 @@ docker version
 docker run hello-world
 ```
 
-> Docker Desktop er gratis til privat brug og små virksomheder. Større virksomheder skal have licens. På jobbet bruger du det, Netcompany stiller til rådighed.
+> Docker Desktop er gratis til privat brug og små virksomheder. Større virksomheder skal have licens. På jobbet bruger du det, konsulenthuset stiller til rådighed.
 
 ---
 

@@ -6,7 +6,7 @@
 
 ## Hvorfor?
 
-Data er kernen i næsten alle de systemer, Netcompany bygger: sager, ansøgninger, borgere, betalinger, afgørelser. Koden kommer og går, men data bliver. Når et gammelt system bliver udskiftet, er det *data*, der skal flyttes med.
+Data er kernen i næsten alle de systemer, konsulenthuset bygger: sager, ansøgninger, borgere, betalinger, afgørelser. Koden kommer og går, men data bliver. Når et gammelt system bliver udskiftet, er det *data*, der skal flyttes med.
 
 Som analytiker kommer du til at:
 - **modellere** data: Hvilke ting findes der i domænet, og hvordan hænger de sammen?

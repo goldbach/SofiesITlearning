@@ -9,7 +9,7 @@ AI-værktøjer er blevet en del af hverdagen i IT-projekter. De bruges til at fo
 Der er to ting, du skal have med fra starten:
 
 1. **AI'en kan tage fejl og lyde helt sikker samtidig.** Ansvaret for det, du afleverer, er dit.
-2. **Som konsulent arbejder du med kundens kode og data.** Hvad du må lægge ind i et AI-værktøj, bestemmer kunden og Netcompany, ikke dig.
+2. **Som konsulent arbejder du med kundens kode og data.** Hvad du må lægge ind i et AI-værktøj, bestemmer kunden og konsulenthuset, ikke dig.
 
 I resten af forløbet bruger du **Claude Code** som tutor. Repoet indeholder en fil, `CLAUDE.md`, der får Claude til at opføre sig som underviser. Den giver hints frem for færdige løsninger, og den bygger forklaringerne på det, du allerede kan.
 
@@ -130,7 +130,7 @@ Det her afsnit er det vigtigste.
 
 ### Data og kode tilhører kunden
 
-Netcompany laver mange systemer for offentlige myndigheder og store virksomheder. Det betyder:
+Konsulenthuset laver mange systemer for offentlige myndigheder og store virksomheder. Det betyder:
 
 - **Kundens kode og dokumenter er fortrolige.** Det er dem, der ejer dem.
 - **Persondata** som CPR-numre, navne og helbredsoplysninger er beskyttet af **GDPR**. Det kan være ulovligt at sende dem til en ekstern tjeneste.
@@ -138,7 +138,7 @@ Netcompany laver mange systemer for offentlige myndigheder og store virksomheder
 
 **Tommelfingerregel:** Brug kun de AI-værktøjer, som projektet udtrykkeligt har godkendt, og kun på den måde, de er godkendt til. Hvis du er i tvivl, så lad være og spørg.
 
-Det her forløb kender ikke Netcompanys interne regler. De varierer sikkert fra kunde til kunde. Gør det til en af dine første opgaver at finde ud af, hvad der gælder på dit projekt.
+Det her forløb kender ikke konsulenthusets interne regler. De varierer sikkert fra kunde til kunde. Gør det til en af dine første opgaver at finde ud af, hvad der gælder på dit projekt.
 
 ### Spørgsmål til din første uge
 

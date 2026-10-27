@@ -6,7 +6,7 @@
 
 ## Hvorfor?
 
-De store forretningssystemer, Netcompany bygger, er typisk skrevet i **Java** eller **C#**. Som analytiker skal du ikke skrive dem, men du skal kunne:
+De store forretningssystemer, konsulenthuset bygger, er typisk skrevet i **Java** eller **C#**. Som analytiker skal du ikke skrive dem, men du skal kunne:
 
 - **læse** koden for at finde ud af, hvad systemet *faktisk* gør, når dokumentationen er forældet. Den er næsten altid forældet.
 - **finde forretningsreglerne** i koden og sammenligne dem med kravene

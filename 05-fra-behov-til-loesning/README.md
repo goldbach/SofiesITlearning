@@ -35,7 +35,7 @@ Et typisk offentligt IT-projekt gennemløber nogenlunde disse faser:
    │                     └────── ændringer (change requests) ◄────────────────┘
 ```
 
-- **Udbud**: Offentlige myndigheder skal som regel sende større opgaver i **udbud** efter udbudsloven. Kunden beskriver behovet, ofte i en **kravspecifikation** med nummererede krav. Leverandører som Netcompany afgiver **tilbud** med løsning og pris.
+- **Udbud**: Offentlige myndigheder skal som regel sende større opgaver i **udbud** efter udbudsloven. Kunden beskriver behovet, ofte i en **kravspecifikation** med nummererede krav. Leverandører som konsulenthuset afgiver **tilbud** med løsning og pris.
 - **Kontrakt**: Den vindende leverandør skriver kontrakt. Staten har standardkontrakter, og kravspecifikationen bliver typisk et bilag til kontrakten. Det betyder, at **kravene er juridisk bindende**. Derfor betyder præcise formuleringer meget.
 - **Analyse/design**: Kravene bliver detaljeret, ofte i workshops med kunden. Her bliver user stories, datamodeller (dag 3) og integrationsbeskrivelser (dag 2) skrevet.
 - **Udvikling og test**: Ofte i **sprints** (del D).

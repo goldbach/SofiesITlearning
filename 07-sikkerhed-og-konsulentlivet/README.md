@@ -233,7 +233,7 @@ Læg mærke til, hvor mange af dem du allerede har mødt. Sikkerhed er ikke et s
 
 - **Følsomme oplysninger** (helbred, etnicitet, religion, fagforening, seksualitet m.fl.) er særligt beskyttede. CPR-numre har også særlige regler i den danske databeskyttelseslov.
 - **Dataansvarlig**: den, der bestemmer, *hvorfor* og *hvordan* data bliver behandlet. Det er typisk kunden.
-- **Databehandler**: den, der behandler data på den dataansvarliges vegne. Det er typisk leverandøren, altså Netcompany. Forholdet er reguleret i en **databehandleraftale**.
+- **Databehandler**: den, der behandler data på den dataansvarliges vegne. Det er typisk leverandøren, altså konsulenthuset. Forholdet er reguleret i en **databehandleraftale**.
 
 Principperne, du skal kunne genkende i krav:
 
@@ -259,7 +259,7 @@ Ved behandlinger med høj risiko skal man lave en **konsekvensanalyse** (DPIA). 
 
 ### Kunden, kontrakten og dig
 
-- **Du repræsenterer Netcompany** over for kunden, også i det små. Vær forberedt, kom til tiden, og gør det, du siger, du vil gøre.
+- **Du repræsenterer konsulenthuset** over for kunden, også i det små. Vær forberedt, kom til tiden, og gør det, du siger, du vil gøre.
 - **Lov aldrig kunden noget, der ikke er aftalt.** *"Det kan vi sagtens lave"* kan blive en ændring på 200 timer, som ingen har budgetteret med (dag 5: change requests). Sig i stedet: *"Godt spørgsmål. Jeg tager det med til teamet, og så vender vi tilbage."*
 - **Kunden er ikke altid én person.** Der er en projektleder, en product owner, fagfolk, it-afdelingen, jurister og en driftsleverandør, og de vil ikke altid det samme. Find ud af, hvem der *beslutter* hvad.
 - **Fortrolighed**: Det, du ser hos kunden, bliver hos kunden. Du har sikkert skrevet under på en fortrolighedserklæring. Nogle projekter, f.eks. inden for forsvar og politi, kræver også en særlig **sikkerhedsgodkendelse**.
@@ -272,7 +272,7 @@ Konsulenthuse lever af timer. Det betyder for dig:
 - **Fakturerbar og intern tid**: Tid på kundens opgaver kan faktureres. Kurser og interne møder kan ikke. **Udnyttelsesgrad** (*utilization*) er andelen af din tid, der kan faktureres. Det er et nøgletal, du vil høre om.
 - **At være "allokeret"** til et projekt betyder, at du er sat på det med en vis procentdel af din tid.
 
-Spørg din leder, hvordan det konkret foregår hos Netcompany. Det her er det generelle billede.
+Spørg din leder, hvordan det konkret foregår i konsulenthuset. Det her er det generelle billede.
 
 ### Roller på et projekt
 

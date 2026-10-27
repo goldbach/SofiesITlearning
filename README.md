@@ -2,7 +2,7 @@
 
 Et forløb på 10 moduler og 6 dage, der skal give dig sproget og de mentale modeller, så du kan følge med fra første dag i et IT-projekt.
 
-Målet er **ikke**, at du kan det hele. Målet er, at du ved, hvad folk taler om i standup og refinement, og at du ved, hvad du skal spørge om eller google. Resten lærer du på projektet og i Netcompanys eget onboarding-forløb.
+Målet er **ikke**, at du kan det hele. Målet er, at du ved, hvad folk taler om i standup og refinement, og at du ved, hvad du skal spørge om eller google. Resten lærer du på projektet og i konsulenthusets eget onboarding-forløb.
 
 ## Sådan bruger du forløbet
 
